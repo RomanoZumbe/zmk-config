@@ -1,22 +1,6 @@
-#if !defined OS_UNICODE_LEAD
-    #if HOST_OS == 2
-        #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS/Windows-Alt-Codes
-    #elif HOST_OS == 1
-        #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
-    #else
-        #define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
-    #endif
-#endif
+#define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
 
-#if !defined OS_UNICODE_TRAIL
-    #if HOST_OS == 2
-        #define OS_UNICODE_TRAIL &macro_release &kp LALT  // macOS/Windows-Alt-Codes
-    #elif HOST_OS == 1
-        #define OS_UNICODE_TRAIL &macro_tap &kp SPACE     // Linux
-    #else
-        #define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
-    #endif
-#endif
+#define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
 
 #define UC_MACRO(name, unicode_bindings) \
     / { \
