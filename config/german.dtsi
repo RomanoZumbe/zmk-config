@@ -1,5 +1,13 @@
 /* German umlauts */
-ZMK_UNICODE_PAIR(   de_ae,      N0, N0,  E, N4,    N0, N0,  C, N4)
-ZMK_UNICODE_PAIR(   de_oe,      N0, N0,  F, N6,    N0, N0,  D, N6)
-ZMK_UNICODE_PAIR(   de_ue,      N0, N0,  F,  C,    N0, N0,  D,  C)
-ZMK_UNICODE_SINGLE( de_eszett,  N0, N0,  D,  F)
+UC_MACRO(de_ae ## _lower, &kp N0 &kp N0 &kp E &kp N4) \
+UC_MACRO(de_ae ## _upper, &kp N0 &kp N0 &kp C &kp N4) \
+UC_MODMORPH(de_ae, &de_ae ## _lower, &de_ae ## _upper)
+UC_MACRO(de_oe ## _lower, &kp N0 &kp N0 &kp F &kp N6) \
+UC_MACRO(de_oe ## _upper, &kp N0 &kp N0 &kp D &kp N6) \
+UC_MODMORPH(de_oe, &de_oe ## _lower, &de_oe ## _upper)
+UC_MACRO(de_ue ## _lower, &kp N0 &kp N0 &kp F &kp C) \
+UC_MACRO(de_ue ## _upper, &kp N0 &kp N0 &kp D &kp C) \
+UC_MODMORPH(de_ue, &de_ue ## _lower, &de_ue ## _upper)
+UC_MACRO( de_eszett ## _lower, &kp N0 &kp N1 &kp D &kp F) \
+UC_MODMORPH(de_eszett, &de_eszett ## _lower, &none)
+
